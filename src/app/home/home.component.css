@@ -1,0 +1,22 @@
+table {
+  margin-left:inherit;
+  margin-top: 30px;
+    width: 50%;
+  }
+  
+  .mat-form-field {
+    margin-top: 30px;
+    margin-left:20px;
+    font-size: 14px;
+    width: 50%;
+  }
+  
+  td, th {
+    width: 45%;
+  }
+  .mat-elevation-z8{
+    widows:3px;
+    margin-left: 25px;
+    margin-right: 35px;
+  }
+ 

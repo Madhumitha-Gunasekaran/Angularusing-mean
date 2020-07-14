@@ -1,0 +1,51 @@
+<!-- <form #regForm="form" (ngSubmit)="save(form)">
+<mat-dialog-content>
+    <mat-form-field>
+        <input matInput min="0" max="100" required placeholder="Name" formControlName="Name" value="{{Name}}" >
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput min="0" max="100" required placeholder="Age" formControlName="Age" value="{{Age}}">
+
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput min="0" max="100" required placeholder="Office" formControlName="office" value="{{office}}">
+        
+    </mat-form-field>
+</mat-dialog-content>
+ </form>
+<mat-dialog-actions>
+    <button class="mat-raised-button" >
+save
+    </button>
+    <button class="mat-raised-button" (click)="close()">
+close
+    </button>
+
+</mat-dialog-actions> -->
+<mat-card class="example-card" >
+    <mat-card-content>
+        <form #regfrom="ngForm" (ngSubmit)="save(regfrom)">
+
+    <!-- <mat-card-title>Login</mat-card-title> -->
+    <mat-form-field appearance="fill">
+        <mat-label>Enter your Name</mat-label>
+        <input matInput type="text" name="Name"  [(ngModel)]="model.Name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter the Age</mat-label>
+        <input matInput type="text" name="Age" #Age="ngModel" [(ngModel)]="model.Age">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter the office</mat-label>
+        <input matInput type="text" name="office" #office="ngModel" [(ngModel)]="model.office">
+    </mat-form-field>
+    <br>
+
+<button mat-raised-button class="Login" color="accent" type="submit">update</button>
+
+    </form>
+</mat-card-content>
+</mat-card>
+

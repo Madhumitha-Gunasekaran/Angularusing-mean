@@ -1,0 +1,45 @@
+<mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Ex. Madhu">
+  </mat-form-field>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort >
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+       <td mat-cell *matCellDef="let row ">{{row.Name}}  </td>
+      </ng-container>
+  
+      <!-- Age Column -->
+      <ng-container matColumnDef="Age">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Age </th>
+        <td mat-cell *matCellDef="let row">{{row.Age}} </td>
+      </ng-container>
+  
+      <!-- office Column -->
+      <ng-container matColumnDef="office">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> office </th>
+        <td mat-cell *matCellDef="let row"> {{row.office}} </td>
+      </ng-container>
+  
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+     
+      </tr>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let datas">
+        <button mat-button color="primary" (click)="openDialog(datas._id)">Edit</button>
+        <button mat-button color="warn" (click)="delete(datas._id)" >Delete</button>
+        </td>
+        </ng-container>
+    </table>
+  
+    <mat-paginator #paginator [length]="pagelength" [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" ></mat-paginator>
+    <!-- <mat-paginator ></mat-paginator> -->
+    
+
+  </div>
